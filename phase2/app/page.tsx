@@ -1,4 +1,7 @@
 
+// Dynamic is extra layer for checking the static and dynamic validation
+// export const dynamic="error"
+
 interface user {
   id: number,
   name: string

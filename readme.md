@@ -21,3 +21,18 @@
 - [x]  Use optimized images with `<Image />` from `next/image`
 
 📌 **Mini Project:** Portfolio or Blog using Pages Router
+
+## 🔄 Phase 2: Data Fetching (Pages Router)
+
+- [x]  Static Generation with `getStaticProps`
+- [x]  Server-side rendering with `getServerSideProps`
+- [x]  Dynamic Pages with `getStaticPaths`
+- [x]  Client-side fetching with `fetch` / `axios` + `useEffect`
+- [x]  **Server Components**:
+- [x]  Use `fetch()` directly (runs on server)
+- [x]  Client components
+- [x]  Use `useEffect`, or libraries like SWR or React Query
+- [x]  **Streaming** (`suspense`, `loading.tsx`)
+- [x]  **Caching** with `cache()`, `revalidate`, `dynamic`
+
+> ✅ Goal: Fetch and display data efficiently with App Router.
