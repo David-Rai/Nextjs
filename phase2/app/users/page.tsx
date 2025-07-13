@@ -1,9 +1,9 @@
-
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   return (
     <main>
-      <button className='btn btn-primary'>Click me</button>
+      <Button>Button</Button>
     </main>
   );
 }
