@@ -5,9 +5,9 @@ export async function GET() {
     const apiKey = process.env.APILEAGUE_API_KEY;
 
 
-    if (!apiKey) {
-        return new Response("API key missing", { status: 500 });
-    }
+    // if (!apiKey) {
+    //     return new Response("API key missing", { status: 500 });
+    // }
 
     const res = await fetch(url, {
         method: "GET",
