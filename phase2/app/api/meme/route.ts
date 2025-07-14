@@ -4,6 +4,11 @@ export async function GET() {
     const url = "https://api.apileague.com/retrieve-random-meme?keywords=rocket";
     const apiKey = process.env.APILEAGUE_API_KEY;
 
+
+    if (!apiKey) {
+        return new Response("API key missing", { status: 500 });
+    }
+
     const res = await fetch(url, {
         method: "GET",
         headers: {
@@ -19,8 +24,8 @@ export async function GET() {
     return new Response(JSON.stringify(data), {
         status: 200,
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
-      });
-      
+    });
+
 }
