@@ -21,7 +21,7 @@
 - [x]  Use optimized images with `<Image />` from `next/image`
 
 📌 **Mini Project:** Portfolio or Blog using Pages Router
-
+   Visit https://nextjs-eight-lilac-q68ed6o7og.vercel.app/
 ## 🔄 Phase 2: Data Fetching (Pages Router)
 
 - [x]  Static Generation with `getStaticProps`
