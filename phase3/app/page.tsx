@@ -3,11 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
 
+
+//Interface for the todos
+interface todoType{
+id:number,
+todo:string
+}
 export default function Page() {
+
 
   // throw new Error("Test error!"); // simulate error
 
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState<todoType []>([])
   const inputRef = useRef<null | HTMLInputElement>(null)
 
   //Getting all the todos from db
@@ -16,7 +23,7 @@ export default function Page() {
       method: "GET",
     })
     const data = await res.json()
-    console.log(data)
+    console.log(data.todos)
     setTodos(data.todos)
   }
   useEffect(() => {
@@ -58,7 +65,7 @@ export default function Page() {
     })
 
     const result = await res.json()
-    console.log("Delte res", result)
+    console.log(result)
     getAll()
   }
 
@@ -82,9 +89,9 @@ export default function Page() {
             key={index}
             className="flex bg-gray-800 px-4 py-2 rounded-md h-[45px] items-center justify-between border border-gray-700"
           >
-            <span className="text-gray-200">{todo}</span>
+            <span className="text-gray-200">{todo?.todo}</span>
             <button
-              onClick={() => handleDelete(index)}
+              onClick={() => handleDelete(todo.id)}
               className="text-red-400 hover:text-red-300 transition-colors"
             >
               <MdDeleteOutline size={18} />
