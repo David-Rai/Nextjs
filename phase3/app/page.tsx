@@ -4,6 +4,9 @@ import { MdDeleteOutline } from "react-icons/md";
 import { IoMdAdd } from "react-icons/io";
 
 export default function Page() {
+
+  // throw new Error("Test error!"); // simulate error
+
   const [todos, setTodos] = useState([])
   const inputRef = useRef<null | HTMLInputElement>(null)
 
@@ -60,7 +63,7 @@ export default function Page() {
   }
 
   //Handling key down
-  const handleKey = (e: KeyboardEvent) => {
+  const handleKey = (e:KeyboardEvent) => {
     // console.log(e)
     if (e.code === "Enter") {
       handleAdd()
@@ -69,36 +72,41 @@ export default function Page() {
 
   // MAIN JSX
   return (
-    <main className="flex h-screen w-full items-center justify-center flex-col bg-gray-200">
-      <h1 className="text-2xl ">Todo list</h1>
-
+    <main className="flex h-screen w-full items-center justify-center flex-col bg-gray-900">
+      <h1 className="text-2xl text-white mb-4">Todo list</h1>
 
       {/* All todos */}
-      <div className="flex flex-col gap-4">
-        {
-          todos.length > 0 && todos.map((todo, index) => {
-            return (
-              <div key={index} className=" flex bg-white px-3 rounded-md h-[40px] items-center justify-between">
-                <li>
-                  {
-                    todo
-                  }</li>
-                <button onClick={() => handleDelete(index)} className="ml-3 text-red-500">
-                  <MdDeleteOutline />
-                </button>
-              </div>
-            )
-          })
-        }
+      <div className="flex flex-col gap-3 w-[300px] max-w-full">
+        {todos.length > 0 && todos.map((todo, index) => (
+          <div
+            key={index}
+            className="flex bg-gray-800 px-4 py-2 rounded-md h-[45px] items-center justify-between border border-gray-700"
+          >
+            <span className="text-gray-200">{todo}</span>
+            <button
+              onClick={() => handleDelete(index)}
+              className="text-red-400 hover:text-red-300 transition-colors"
+            >
+              <MdDeleteOutline size={18} />
+            </button>
+          </div>
+        ))}
       </div>
 
       {/* Add new todo */}
-      <div className="flex gap-5 bg-gray-100 h-[50px] rounded-md items-center justify-between px-3 m-4">
-        <input type="text" placeholder="New todo"
+      <div className="flex gap-3 bg-gray-800 h-[50px] rounded-md items-center justify-between px-4 mt-6 w-[300px] max-w-full border border-gray-700">
+        <input
+          type="text"
+          placeholder="New todo"
           onKeyDown={()=>handleKey}
-          ref={inputRef} className="focus:border-0 focus:outline-0" />
-        <button onClick={handleAdd}>
-          <IoMdAdd size={20} />
+          ref={inputRef}
+          className="bg-transparent text-gray-200 placeholder-gray-500 focus:outline-none w-full"
+        />
+        <button
+          onClick={handleAdd}
+          className="text-green-400 hover:text-green-300 transition-colors"
+        >
+          <IoMdAdd size={22} />
         </button>
       </div>
     </main>
