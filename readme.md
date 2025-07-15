@@ -22,6 +22,7 @@
 
 📌 **Mini Project:** Portfolio or Blog using Pages Router
    Visit https://nextjs-eight-lilac-q68ed6o7og.vercel.app/
+
 ## 🔄 Phase 2: Data Fetching (Pages Router)
 
 - [x]  Static Generation with `getStaticProps`
@@ -38,3 +39,25 @@
 > ✅ Goal: Fetch and display data efficiently with App Router.
 
 visit https://nextjs-dsdl.vercel.app/
+
+
+> 
+> 
+
+---
+
+## 📦 Phase 3: App Router (Next.js 13+)
+
+- [x]  Learn new `app/` directory structure
+    - [x]  `page.tsx` for each route
+    - [x]  `layout.tsx` for shared UI
+    - [x]  `loading.tsx` for route loading
+    - [ ]  error.tsx foro error hanlding
+- [x]  Understand Server vs Client Components
+    - [x]  Use `"use client"` for interactive components
+- [x]  Use `app/api/` for API routes
+- [ ]  Use new metadata for SEO
+
+📌 **Mini Project:** Admin Dashboard using App Router
+
+visit https://nextjs-kicp.vercel.app/
