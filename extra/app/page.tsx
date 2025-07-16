@@ -1,68 +1,41 @@
-"use client"
+
 import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { useState, useEffect } from 'react'
-import { Button } from "@/components/ui/button"
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 
-//User interface
-interface userTypes {
-  id: number
-  name: string
-  email: string
-}
-
-export default function Home() {
-  const [users, setUsers] = useState<userTypes[]>([])
-
-  //  Getting the user data from the backend
-  const getUser = async () => {
-    try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/users", {
-        cache: "force-cache"
-      })
-
-      const data = await res.json()
-      console.log(data)
-      setUsers(data)
-    }
-
-    catch (err) {
-      console.log(err)
-      // throw new Error(err)
-    }
-  }
-
-  useEffect(() => {
-    getUser()
-  }, [])
-
+export default function AvatarDemo() {
   return (
-    <main className="h-screen w-full flex flex-wrap p-3 gap-3">
-      {
-        users.length > 0 && users.map((user, index) => {
-          return (
-            <Card key={index} className="p-3">
-              <CardHeader>
-                <CardTitle>User {user.id}</CardTitle>
-                <CardDescription>{user.name}</CardDescription>
-              </CardHeader>
-
-              <CardFooter>
-                <p>{user.email}</p>
-              </CardFooter>
-
-              <Button>Add friend</Button>
-            </Card>
-          )
-        })
-      }
-    </main>
+    <div className="flex flex-row flex-wrap items-center gap-12">
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
+      <Avatar className="rounded-lg">
+        <AvatarImage
+          src="https://github.com/evilrabbit.png"
+          alt="@evilrabbit"
+        />
+        <AvatarFallback>ER</AvatarFallback>
+      </Avatar>
+      <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <Avatar>
+          <AvatarImage src="https://github.com/leerob.png" alt="@leerob" />
+          <AvatarFallback>LR</AvatarFallback>
+        </Avatar>
+        <Avatar>
+          <AvatarImage
+            src="https://github.com/evilrabbit.png"
+            alt="@evilrabbit"
+          />
+          <AvatarFallback>ER</AvatarFallback>
+        </Avatar>
+      </div>
+    </div>
   )
 }
