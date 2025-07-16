@@ -9,7 +9,7 @@ export default function Page() {
             </h1>
 
             <div className="flex flex-col items-center justify-center text-[#848484] text-xl">
-                <h1>Used by some of the world's largest companies, Next.js enables you to create
+                <h1>Used by some of the worlds largest companies, Next.js enables you to create
                     <span className="text-gray-100 pl-2">high-</span></h1>
                 <h1><span className="text-white px-2">quality web applications</span>with the power of React components.</h1>
 
