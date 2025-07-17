@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input"
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -10,7 +12,9 @@ import next from '../../.././public/next.svg'
 
 export default function Page() {
     return (
-        <nav className="h-[80px] w-full flex items-center justify-start px-5">
+        <nav className="h-[80px] w-full flex items-center justify-between px-5 border-b-[0.3px] border-[#474747]">
+
+            {/* Left */}
             <div className="flex items-center gap-8">
                 <div className=" h-full flex items-center gap-6">
                     <Image
@@ -20,7 +24,7 @@ export default function Page() {
                         width={30}
                     />
                     <Image
-                    className="invert"
+                        className="invert"
                         src={next}
                         alt="adasd"
                         height={100}
@@ -74,6 +78,34 @@ export default function Page() {
 
                     </NavigationMenuList>
                 </NavigationMenu>
+            </div>
+
+            {/* Right */}
+            <div className="h-full flex items-center gap-3">
+                <Input
+                    className="border-none bg-[#1A1A1A] w-[250px] h-[35px]"
+                    placeholder="Search documentation..." />
+
+                <div>
+
+                    {/* Right buttons */}
+                    <div className="flex flex-col items-center justify-center h-[100px]">
+                        <div className="flex h-[35px] gap-3 items-center">
+                            <Button className="text-gray-200 font-medium h-full w-[120px] text-md border-[0.3px] border-[#474747]">
+                                <div>
+                                    <Image
+                                        src={vercel}
+                                        alt="adasd"
+                                        height={12}
+                                        width={12}
+                                    />
+                                </div>
+                                Deploy
+                            </Button>
+                            <Button variant="secondary" className="text-black h-full w-[100px] text-md font-semibold">Learn</Button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     );
