@@ -30,11 +30,11 @@ export default function Page() {
                     <Image
                         src={vercel}
                         alt="adasd"
-                        height={15}
-                        width={15}
+                        height={10}
+                        width={10}
                     />
-                    <p>~</p>
-                    <p className="text-[#848484]">npx create-next-app@latest</p>
+                    <p className='text-[#848484]'>~</p>
+                    <p className="text-[#848484] text-sm">npx create-next-app@latest</p>
                 </div>
             </div>
 
